@@ -75,7 +75,7 @@ section {
 }
 
 .nav-link.active {
-  color: #1E90FF !important;
+  color: #1e90ff !important;
 }
 .nav-link {
   font-size: 18px;
@@ -109,7 +109,7 @@ section {
 }
 
 .navbar-nav li a:hover {
-  color: #1E90FF;
+  color: #1e90ff;
 }
 
 .nav_back {
@@ -242,7 +242,6 @@ section {
   margin: 0;
   padding: 0;
   background-color: var(--main-color);
-  /* height: 1550px; */
 }
 
 .main-title::after {
@@ -268,7 +267,16 @@ section {
 
 .card {
   background-color: rgba(255, 255, 255, 0.05);
-  transition: var(--transition2);
+  /* transition: var(--transition2); */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .card-title {
@@ -287,10 +295,11 @@ section {
   -webkit-text-fill-color: transparent;
   color: unset;
   animation-timeline: auto;
-  animation-range-start: normal;
+  transition: background-position 0.5s ease;
+  /* animation-range-start: normal;
   animation-range-end: normal;
   overflow: visible;
-  animation: 3s linear 0s infinite normal forwards running nextui-k-dAFEPd;
+  animation: 3s linear 0s infinite normal forwards running nextui-k-dAFEPd; */
 }
 @keyframes nextui-k-dAFEPd {
   100% {
@@ -303,9 +312,18 @@ section {
   color: var(--text-color);
   line-height: 1.9;
 }
+.card:hover .card-title {
+  background-position: -200% center; /* تغيير موضع التدرج اللوني عند المرور */
+}
+
 .card-text {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease; /* تأثير انتقال اللون للنص */
+}
+
+.card:hover .card-text {
+  color: rgba(255, 255, 255, 1); /* جعل النص أبيض عند المرور */
 }
 
 .icon {
@@ -313,10 +331,33 @@ section {
   background-color: rgba(255, 255, 255, 0.03);
   padding: 3px;
   width: 50px;
+  transition: transform 0.3s ease;
+  position: relative;
 }
 .icon i {
   color: var(--text-color);
+  transition: transform 0.5s ease-in-out; /* حركة للأيقونة مع تأثير سلاسة */
 }
+
+@keyframes pulseIcon {
+  0% {
+    transform: scale(1); /* الحجم الطبيعي */
+  }
+  50% {
+    transform: scale(1.2); /* تكبير الأيقونة قليلاً */
+  }
+  100% {
+    transform: scale(1); /* العودة إلى الحجم الطبيعي */
+  }
+}
+
+.card:hover .icon {
+  animation: pulseIcon 1s ease-in-out infinite; /* تطبيق الأنيميشن عند المرور */
+}
+
+/* .card:hover .icon {
+  transform: scale(1.2); 
+} */
 
 /* Strat Section About */
 .about-us-section {
@@ -423,6 +464,42 @@ section {
 /* End Section Portfolio */
 
 /* Start Section How It Work */
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* إحداث رفع البطاقة عند التفاعل */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+  border-color: var(--green-color); /* تغيير لون الإطار عند التفاعل */
+}
+
+.card.active {
+  border: 2px solid var(--green-color); /* تغيير الإطار للبطاقة النشطة */
+  transform: scale(1.05); /* تكبير البطاقة */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* إضافة ظل قوي للبطاقة النشطة */
+  animation: borderAnimation 2s linear infinite; /* إضافة التأثير المتحرك للإطار */
+}
+
+/* حركة الإطار بشكل مستمر */
+@keyframes borderAnimation {
+  0% {
+    border-color: var(--green-color);
+    transform: scale(1.05);
+  }
+  50% {
+    border-color: var(--blue-ocean); /* تغيير لون الإطار لنهاية الحركة */
+    transform: scale(1.08);
+  }
+  100% {
+    border-color: var(--green-color);
+    transform: scale(1.05); /* العودة لحجم البطاقة الأساسي */
+  }
+}
+
 .card-work {
   font-size: 24px;
   color: rgba(255, 255, 255, 1);
@@ -442,41 +519,96 @@ section {
   animation-range-start: normal;
   animation-range-end: normal;
   overflow: visible;
-  animation: 3s linear 0s infinite normal forwards running nextui-k-dAFEPd;
-}
-@keyframes nextui-k-dAFEPd {
-  100% {
-    background-position: -200% center;
-  }
+  transition: background-position 0.5s ease-out;
 }
 
-.text-work {
-  color: rgba(255, 255, 255, 1);
-  font-size: 16px;
+/* الحركة للنص عند المرور على البطاقة */
+.card:hover .card-work {
+  background-position: -200% center; /* تغيير الموقع عند التفاعل مع البطاقة */
 }
 
+/* التأثير على الأيقونات */
 .icon-work {
   text-align: center;
   background-color: var(--btn-color);
-  padding: 3px;
+  padding: 5px;
   width: 50px;
+  transition: transform 0.3s ease-in-out; /* تأثير الحركة للأيقونات */
 }
+
 .icon-work i {
   color: var(--text-color);
 }
+
+/* عند التفاعل مع البطاقة: تحريك الأيقونة */
+.card:hover .icon-work {
+  transform: scale(1.2); /* تكبير الأيقونة */
+}
+
+.text-work {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  transition: color 0.3s ease-in-out; /* تغيير اللون بشكل تدريجي */
+}
+
+.card:hover .text-work {
+  color: rgba(255, 255, 255, 1); /* تغير اللون عند التفاعل */
+}
+
+.body-work {
+  padding: 15px;
+  transition: transform 0.3s ease-out, border 0.3s ease-out;
+}
+
 .body-work:hover {
-  border: 2px solid var(--green-color);
+  transform: translateY(-5px); /* حركة تأثير الرفع عند التفاعل */
+  border: 2px solid var(--green-color); /* تغيير الإطار عند التفاعل */
 }
 
 /* Start News */
-.posts {
+.latest-posts {
   background-color: var(--main-color);
 }
 
-.text-post {
-  color: var(--text-color);
-  font-size: 20px;
+.post-card {
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 2px solid transparent;
+  position: relative;
 }
+
+.post-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--green-color);
+}
+
+.post-card-img {
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف أسفل الصورة */
+  transition: transform 0.3s ease-in-out;
+}
+
+.post-card:hover .post-card-img {
+  transform: scale(1.1); /* تكبير الصورة عند التمرير */
+}
+
+.post-card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.post-text {
+  color: var(--text-color);
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.post-card:hover .post-text {
+  color: var(--green-color); /* تغيير لون النص عند التمرير */
+}
+
 /* End News & Article */
 
 /* Start logo carouse */

@@ -123,10 +123,37 @@ section {
 /* End Navbar */
 
 /* Start blog section */
+/* تحديد القسم */
 .blog-section {
   margin-top: 1rem;
-  border-bottom: 1px solid #444;
+  position: relative;
+  padding-bottom: 10px;
+  overflow: hidden;
 }
+
+/* الخط السفلي مع الأنيميشن */
+.blog-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--green-color);
+  animation: animateLine 2s linear infinite;
+}
+
+/* أنيميشن تحرك الخط */
+@keyframes animateLine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
 
 .blog-section h6 {
   color: var(--green-color);
@@ -137,11 +164,47 @@ section {
   font-weight: 700;
 }
 
+/* تأثيرات البطاقة */
 .card {
   background-color: var(--main-color);
   border: none;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* تكبير الصورة عند المرور */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+  transform: scale(1.1); /* تكبير الصورة */
+}
+
+/* تأثير النصوص */
+.card-body {
+  position: relative;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-body {
+  transform: translateY(-10px);
+  opacity: 0.9;
+}
+
+/* الأيقونة */
+.cal_icon {
+  color: var(--green-color);
+}
+
+/* نصوص البطاقة */
 .card small {
   color: #a8acb7;
 }
@@ -150,14 +213,12 @@ section {
   color: var(--text-color);
   font-weight: bold;
 }
+
 .card-text {
   color: #cccccc;
   font-size: 18px;
 }
 
-.cal_icon {
-  color: var(--green-color);
-}
 
 .btn-load-more {
   font-weight: 600;

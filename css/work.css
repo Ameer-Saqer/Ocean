@@ -138,45 +138,47 @@ section {
 }
 
 /* Start Section About */
-.about-us-section {
-  text-align: center;
-  padding: 50px;
+/* Animation Keyframes */
+@keyframes rotateFadeIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-45deg) scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* Apply Animation to Elements */
+.about-us-section .astronaut-img-1 {
+  opacity: 0;
+  animation: rotateFadeIn 1.5s ease-in-out forwards;
+}
+
+.about-us-section h2 {
+  opacity: 0;
+  animation: rotateFadeIn 1.5s ease-in-out forwards;
+  animation-delay: 0.5s;
 }
 
 .about-us-section p {
-  font-size: 16px;
-  color: #cccccc;
+  opacity: 0;
+  animation: rotateFadeIn 1.5s ease-in-out forwards;
+  animation-delay: 1s;
 }
+
 .about-us-section h5 {
-  color: var(--green-color);
-  font-size: 20px;
+  opacity: 0;
+  animation: rotateFadeIn 1.5s ease-in-out forwards;
+  animation-delay: 1.2s;
 }
 
-.astronaut-img-1 {
-  max-width: 100%;
-  height: auto;
-}
 
-.about-us-title {
-  color: var(--text-color);
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.about-us-btn {
-  background-color: var(--btn-color);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-top: 20px;
-  transition: transform 0.3s;
-}
-
-.about-us-btn:hover {
-  transform: scale(1.1);
-}
 
 /* End Section About */
 
