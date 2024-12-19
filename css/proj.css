@@ -39,7 +39,7 @@
 
 body {
   font-family: "Work Sans", serif;
-  background-color: #0d0d0d;
+  background-color: #000;
   color: #fff;
 }
 
@@ -78,7 +78,7 @@ header.scrolled {
 }
 
 .navbar {
-  background-color: #0d0d0d;
+  background-color: var(--black-color);
   width: 100%;
   height: 110px;
   display: flex;
@@ -120,9 +120,9 @@ header.scrolled {
 .navbar-nav li a {
   color: var(--text-color);
   margin-bottom: 15px;
-  white-space: nowrap; 
-  font-size: 16px; 
-  text-align: center; 
+  white-space: nowrap;
+  font-size: 16px;
+  text-align: center;
   display: block;
   padding: 5px 10px;
 }
@@ -135,96 +135,205 @@ header.scrolled {
   background-color: var(--secondry-color);
   border-radius: 50px;
   height: 50px;
-  text-align: center; 
+  text-align: center;
   width: 100%;
   max-width: 900px;
   display: flex;
-  justify-content: space-around; 
-  align-items: center; 
-  padding: 5px 0; 
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px 0;
   margin: 0 auto;
 }
-/* End Navbar */
+/* End Nav */
 
-/* Start Contact section */
-.contact-section h3 {
-  margin-top: 8rem;
-  font-size: 3.5rem;
-  font-weight: 600;
+/* Start Section Portfolio */
+.portfolios {
+  flex-direction: column;
+  gap: 50px;
 }
 
-.contact-section p {
-  font-size: 24px;
-  font-weight: 600;
+.main-title h2 {
+  color: var(--text-color);
+  font-size: 36px;
+  font-weight: 700;
 }
 
-.ocean {
-  color: var(--blue-ocean);
+.main-title h5 {
+  color: var(--green-color);
 }
 
-.form-container {
+.category {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  min-height: 100vh;
+  gap: 20px;
 }
 
-.form-box {
-  background-color: var(--main-color);
-  border-radius: 8px;
-  padding: 30px;
-}
-
-.form-box p {
-  color: #cccccc;
-}
-
-.form-control {
-  background-color: #1c1c1c;
-  border: 1px solid #3a3a3a;
-  color: #ffffff;
-  padding: 18px;
-  border-radius: 50px;
-}
-
-.form-control textarea {
-  resize: none;
-  border-radius: 1px;
-}
-
-.form-control::placeholder {
-  color: #cccccc;
-}
-.form-control:focus {
-  background-color: #1c1c1c;
-  color: #cccccc;
-  border-color: #6c63ff;
-  box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
-}
-.btn-primary {
-  background-color: var(--blue-ocean);
+.category button {
+  height: 35px;
+  background-color: transparent;
   border: none;
-  padding: 15px;
+  color: rgba(168, 172, 183, 1);
+  transition: var(--transition2);
+}
+
+.category button:hover {
+  border-bottom: 1px solid var(--blue-ocean);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: var(--transition2);
+}
+
+.category button:focus {
+  border-bottom: 1px solid var(--blue-ocean);
+  color: var(--text-color);
+}
+
+.portfolio_image {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.portfolio_img img {
+  width: 365px;
+  height: 382px;
+}
+
+@media (max-width: 900px) {
+  .category button {
+    font-size: 1rem;
+  }
+  .category {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 500px) {
+  .portfolio_image {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* End Section Portfolio */
+
+/* Start form section */
+.digest-section {
+  height: 100vh;
+}
+
+.astronaut-img {
+  border-radius: 35%;
+  background-color: var(--blue-ocean);
+  padding: 20px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.astronaut-img img {
+  height: 100%;
+  object-fit: cover; /* لتناسب الأبعاد */
+  animation: float 3s ease-in-out infinite; /* تطبيق الأنيميشن فقط على الصورة */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.digest-content {
+  margin-left: 170px;
+}
+
+.digest-content h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #3500fc;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.input-group {
+  width: 650px;
+  margin-top: 80px;
+}
+
+.input-group .form-control {
+  border-radius: 50px 0 0 50px;
+  padding: 23px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-group .btn-primary {
+  background-color: var(--blue-ocean);
+  font-size: 14px;
+  border: 5px solid #fff;
   border-radius: 50px;
+  padding: 10px 20px;
   transition: all 0.3s ease-in-out;
 }
-.btn-primary:hover {
+
+.input-group .btn-primary:hover {
   background-color: var(--text-color);
   color: var(--blue-ocean);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
-.image-container img {
-  width: 450px;
-  border-radius: 8px;
+
+@media (max-width: 768px) {
+  .digest-section {
+    padding: 20px;
+  }
+
+  .astronaut-img {
+    border-radius: 35%;
+    background-color: var(--blue-ocean);
+    padding: 5px;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .astronaut-img img {
+    height: 100%;
+    object-fit: cover; /* لتناسب الأبعاد */
+    animation: float 3s ease-in-out infinite; /* تطبيق الأنيميشن فقط على الصورة */
+  }
+
+  .digest-content h2 {
+    font-size: 1.8rem;
+    margin-right: 150px;
+  }
+
+  .input-group {
+    width: 350px;
+    margin-top: 80px;
+    margin-left: -120px;
+  }
+
+  .input-group .form-control,
+  .input-group .btn-primary {
+    font-size: 0.9rem;
+  }
 }
-/* End Contact section */
+/* End form section */
+/* End Main Section */
 
 /* Start Footer */
 .footer-section {
-  margin-top: 100px;
-  background-color: var(--main-color);
+  background-color: var(--black-color);
   color: var(--text-color);
-  border-top: 2px solid #444;
   padding: 40px 20px;
 }
 
@@ -285,12 +394,8 @@ header.scrolled {
 }
 
 .footer-newsletter h4 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 600;
-}
-
-.space_mono {
-  font-family: "Space Mono", monospace;
 }
 
 .footer-newsletter .text-foot-p {
@@ -328,7 +433,8 @@ header.scrolled {
 .footer-bottom .ocean-footer {
   color: var(--blue-ocean);
 }
-/* End Footer Section */
+
+/* End Footer */
 
 .whatsapp-button {
   position: absolute; /* الزر يتحرك مع المحتوى */

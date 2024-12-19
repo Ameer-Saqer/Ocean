@@ -3,8 +3,7 @@
   --secondry-color: #262626;
   --black-color: #000000;
   --text-color: #ffffff;
-  --blue-ocean: #2938b4;
-  --btn-color: #3500fc;
+  --blue-ocean: #3500fc;
   --text-ocean: #3400f6;
   --green-color: #00fcdb;
   --transition: 0.3s;
@@ -30,7 +29,7 @@
 
 /* تأثير على المقبض عند التمرير عليه */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--btn-color);
+  background: var(--blue-ocean);
 }
 
 * {
@@ -64,6 +63,21 @@ section {
   transform: translateY(0);
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out; /* تأثير الانتقال */
+}
+
+/* التصميم بعد التمرير */
+header.scrolled {
+  background-color: var(--black-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+
 .navbar {
   background-color: var(--black-color);
   width: 100%;
@@ -84,7 +98,7 @@ section {
 }
 
 .connect {
-  background-color: var(--btn-color);
+  background-color: var(--blue-ocean);
   color: var(--text-color);
   border: none;
   border-radius: 50px;
@@ -94,7 +108,7 @@ section {
   transition: background-color 0.3s ease;
 }
 .connect:hover {
-  color: var(--text-ocean);
+  color: var(--blue-ocean);
   background-color: var(--text-color);
 }
 
@@ -106,6 +120,11 @@ section {
 .navbar-nav li a {
   color: var(--text-color);
   margin-bottom: 15px;
+  white-space: nowrap;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  padding: 5px 10px;
 }
 
 .navbar-nav li a:hover {
@@ -115,10 +134,15 @@ section {
 .nav_back {
   background-color: var(--secondry-color);
   border-radius: 50px;
-  width: 80%;
   height: 50px;
-  display: flex;
   text-align: center;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px 0;
+  margin: 0 auto;
 }
 
 /* end navbar */
@@ -179,7 +203,7 @@ section {
   transition: background-color 0.3s ease;
 }
 .btn_all:hover {
-  color: var(--text-ocean);
+  color: var(--blue-ocean);
   background-color: var(--text-color);
 }
 
@@ -196,7 +220,7 @@ section {
 .stat .number {
   font-size: 28px;
   font-weight: bold;
-  color: var(--text-ocean);
+  color: var(--blue-ocean);
 }
 
 .stat .label {
@@ -265,18 +289,17 @@ section {
   font-size: 3rem;
 }
 
-.card {
+.card_service {
   background-color: rgba(255, 255, 255, 0.05);
-  /* transition: var(--transition2); */
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
-.card:hover {
+.card_service:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(76, 86, 225, 0.1);
 }
 
 .card-title {
@@ -296,10 +319,6 @@ section {
   color: unset;
   animation-timeline: auto;
   transition: background-position 0.5s ease;
-  /* animation-range-start: normal;
-  animation-range-end: normal;
-  overflow: visible;
-  animation: 3s linear 0s infinite normal forwards running nextui-k-dAFEPd; */
 }
 @keyframes nextui-k-dAFEPd {
   100% {
@@ -312,7 +331,7 @@ section {
   color: var(--text-color);
   line-height: 1.9;
 }
-.card:hover .card-title {
+.card_service:hover .card-title {
   background-position: -200% center; /* تغيير موضع التدرج اللوني عند المرور */
 }
 
@@ -322,7 +341,7 @@ section {
   transition: color 0.3s ease; /* تأثير انتقال اللون للنص */
 }
 
-.card:hover .card-text {
+.card_service:hover .card-text {
   color: rgba(255, 255, 255, 1); /* جعل النص أبيض عند المرور */
 }
 
@@ -351,13 +370,9 @@ section {
   }
 }
 
-.card:hover .icon {
+.card_service:hover .icon {
   animation: pulseIcon 1s ease-in-out infinite; /* تطبيق الأنيميشن عند المرور */
 }
-
-/* .card:hover .icon {
-  transform: scale(1.2); 
-} */
 
 /* Strat Section About */
 .about-us-section {
@@ -386,7 +401,7 @@ section {
 }
 
 .about-us-btn {
-  background-color: var(--btn-color);
+  background-color: var(--blue-ocean);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -426,14 +441,14 @@ section {
 }
 
 .category button:hover {
-  border-bottom: 1px solid var(--btn-color);
+  border-bottom: 1px solid var(--blue-ocean);
   color: var(--text-color);
   cursor: pointer;
   transition: var(--transition2);
 }
 
 .category button:focus {
-  border-bottom: 1px solid var(--btn-color);
+  border-bottom: 1px solid var(--blue-ocean);
   color: var(--text-color);
 }
 
@@ -530,7 +545,7 @@ section {
 /* التأثير على الأيقونات */
 .icon-work {
   text-align: center;
-  background-color: var(--btn-color);
+  background-color: var(--blue-ocean);
   padding: 5px;
   width: 50px;
   transition: transform 0.3s ease-in-out; /* تأثير الحركة للأيقونات */
@@ -661,7 +676,7 @@ section {
 
 .astronaut-img {
   border-radius: 35%;
-  background-color: var(--btn-color);
+  background-color: var(--blue-ocean);
   padding: 20px;
   width: 450px;
   height: 450px;
@@ -713,7 +728,7 @@ section {
 }
 
 .input-group .btn-primary {
-  background-color: var(--btn-color);
+  background-color: var(--blue-ocean);
   font-size: 14px;
   border: 5px solid #fff;
   border-radius: 50px;
@@ -723,7 +738,7 @@ section {
 
 .input-group .btn-primary:hover {
   background-color: var(--text-color);
-  color: var(--btn-color);
+  color: var(--blue-ocean);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -734,7 +749,7 @@ section {
 
   .astronaut-img {
     border-radius: 35%;
-    background-color: var(--btn-color);
+    background-color: var(--blue-ocean);
     padding: 5px;
     width: 250px;
     height: 250px;
@@ -797,7 +812,7 @@ section {
   transition: all 0.3s ease-in-out;
 }
 .social-icons a:hover {
-  color: var(--btn-color);
+  color: var(--blue-ocean);
 }
 
 .footer-links h4,
@@ -821,7 +836,7 @@ section {
 }
 
 .footer-links ul li a:hover {
-  color: var(--btn-color);
+  color: var(--blue-ocean);
 }
 
 .footer-newsletter p {
@@ -853,7 +868,7 @@ section {
 }
 
 .input-group-2 .btn {
-  background-color: var(--btn-color);
+  background-color: var(--blue-ocean);
   color: var(--text-color);
   border-radius: 0 15px 15px 0;
   padding: 10px 20px;
@@ -868,7 +883,45 @@ section {
 }
 
 .footer-bottom .ocean-footer {
-  color: var(--btn-color);
+  color: var(--blue-ocean);
 }
 
 /* End Footer */
+
+.whatsapp-button {
+  position: absolute; /* الزر يتحرك مع المحتوى */
+  top: calc(100% - 100px); /* تعديل موقعه مع المحتوى */
+  right: 20px; /* قريب من الجانب الأيمن */
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  z-index: 1000; /* فوق باقي العناصر */
+}
+
+.whatsapp-button img {
+  width: 35px;
+  height: 35px;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    transform: scale(1);
+  }
+}

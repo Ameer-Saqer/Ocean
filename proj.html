@@ -12,7 +12,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
     />
     <!-- css file -->
-    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/proj.css" />
     <link rel="stylesheet" href="css/style.css" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,7 +23,7 @@
     />
     <!-- add website logo -->
     <link rel="icon" href="image/logo - title.png" />
-    <title>Contact</title>
+    <title>Projects</title>
   </head>
   <body>
     <header>
@@ -56,7 +56,7 @@
                   <a class="nav-link" href="about.html">Service</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="proj.html">Projects</a>
+                  <a class="nav-link active" href="proj.html">Projects</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="work.html">How it works</a>
@@ -65,7 +65,7 @@
                   <a class="nav-link" href="blog.html">Blog</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="contact.html">Contact</a>
+                  <a class="nav-link" href="contact.html">Contact</a>
                 </li>
               </ul>
             </div>
@@ -79,88 +79,104 @@
     </header>
     <!-- End header -->
 
+    <!-- Start Main -->
     <main>
-      <section
-        class="contact-section d-flex align-items-center justify-content-center"
-      >
-        <div class="text-center">
-          <h3 class="text-cont mb-3">Contact us</h3>
-          <p>
-            Reach out to us, and let's build a world full of creativity together
-            <br />
-            with <span class="ocean">Ocean</span> – where innovative programming
-            meets stunning design!
-          </p>
+      <!-- Start Section Portfolio -->
+      <section class="portfolios" id="portfolio">
+        <div class="main-title text-center mt-5 mb-5 position-relative">
+          <h5>PROJECTS</h5>
+          <h2 class="fw-bold">
+            We have completed many <br />
+            amazing projects that you <br />
+            will not believe
+          </h2>
+        </div>
+        <div class="category">
+          <button data-filter="all" class="text-decoration-none">
+            All Projects
+          </button>
+          <button data-filter=".category-a" class="text-decoration-none">
+            Applications
+          </button>
+          <button data-filter=".category-b" class="text-decoration-none">
+            Website
+          </button>
+          <button data-filter=".category-c" class="text-decoration-none">
+            Design
+          </button>
+          <button data-filter=".category-d" class="text-decoration-none">
+            content
+          </button>
+          <button data-filter=".category-e" class="text-decoration-none">
+            Motion graphics
+          </button>
+        </div>
+
+        <div class="portfolio_image">
+          <div class="portfolio_img portfolio1 mix category-b">
+            <img src="image/portfolio/portfolio1.png" alt="" />
+          </div>
+
+          <div class="portfolio_img portfolio2 mix category-a">
+            <img src="image/portfolio/portfolio2.png" alt="" />
+          </div>
+
+          <div class="portfolio_img portfolio3 mix category-a">
+            <img src="image/portfolio/portfolio3.png" alt="" />
+          </div>
+
+          <div class="portfolio_img portfolio4 mix category-c category-d">
+            <img src="image/portfolio/portfolio4.png" alt="" />
+          </div>
+
+          <div class="portfolio_img portfolio5 mix">
+            <img src="image/portfolio/portfolio5.png" alt="" />
+          </div>
+
+          <div class="portfolio_img portfolio6 mix category-c">
+            <img src="image/portfolio/portfolio6.png" alt="" />
+          </div>
+
+          <div class="portfolio_img portfolio6 mix category-c">
+            <img src="image/portfolio/portfolio5.png" alt="" />
+          </div>
+
+          <div class="portfolio_img portfolio6 mix category-c">
+            <img src="image/portfolio/portfolio4.png" alt="" />
+          </div>
         </div>
       </section>
+      <!-- End Section Portfolio -->
 
-      <div class="container form-container mt-0">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <div class="form-box">
-              <h2>
-                Fill up the form and our Team will get back to you within 24
-                hours.
-              </h2>
-              <p>
-                We’d love to hear from you! Whether you have questions, need
-                support, or want to discuss a potential project, feel free to
-                reach out to us through any of the following methods:
-              </p>
-              <form>
-                <div class="row mb-3">
-                  <div class="col">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Last Name"
-                    />
-                  </div>
-                  <div class="col">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="First Name"
-                    />
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="Email"
-                  />
-                </div>
-                <div class="mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Phone Number"
-                  />
-                </div>
-                <div class="mb-3">
-                  <textarea
-                    class="form-control"
-                    rows="4"
-                    placeholder="Message"
-                  ></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">
-                  Send Message
-                </button>
-              </form>
-            </div>
+      <!-- Start Section Form -->
+      <section
+        class="digest-section d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="container d-flex flex-column flex-md-row align-items-center justify-content-center"
+        >
+          <div class="astronaut-img mb-4 mb-md-0">
+            <img src="image/space-man-nbg.png" alt="Astronaut" />
           </div>
-          <div class="col-md-6 image-container">
-            <img src="image/Image box.png" alt="Astronaut" />
+          <div class="digest-content text-center text-md-start">
+            <h2 class="mb-5">Join our weekly digest</h2>
+            <form class="input-group">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter Your Mail..."
+                required
+              />
+              <button type="submit" class="btn btn-primary">GET STARTED</button>
+            </form>
           </div>
         </div>
-      </div>
-      <!-- End form section -->
+      </section>
+      <!-- End Section Form -->
     </main>
-    <!-- End Main -->
+    <!-- End main section -->
 
-    <!-- footer section -->
+    <!-- Start Footer -->
     <footer class="footer-section">
       <div
         class="container d-flex flex-column flex-md-row justify-content-between align-items-start"
@@ -182,7 +198,7 @@
 
         <!-- Explore Links -->
         <div class="footer-links">
-          <h4 class="space_mono">Explore</h4>
+          <h4>Explore</h4>
           <ul class="ul-footer">
             <li><a href="#">PROJECTS</a></li>
             <li><a href="#">How it works</a></li>
@@ -192,7 +208,7 @@
 
         <!-- Newsletter -->
         <div class="footer-newsletter">
-          <h4 class="space_mono">Join Our Weekly Digest</h4>
+          <h4>Join Our Weekly Digest</h4>
           <p class="text-foot-p">
             Get exclusive promotions & updates <br />
             straight to your inbox.
@@ -215,52 +231,12 @@
         </p>
       </div>
     </footer>
-    <!-- End footer -->
+    <!-- End footer section -->
 
-    <a
-      href="https://wa.me/970567463404"
-      target="_blank"
-      class="whatsapp-button"
-      id="whatsappButton"
-    >
-      <img src="image/whatsapp.png" alt="WhatsApp" />
+    <a href="https://wa.me/970567463404" target="_blank" class="whatsapp-button" id="whatsappButton">
+      <img src="image/whatsapp.png" alt="WhatsApp">
     </a>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // اختيار جميع العناصر في الصفحة
-        const elements = document.querySelectorAll("*");
-
-        // إضافة كلاس "fade-in" لجميع العناصر
-        elements.forEach((element) => {
-          element.classList.add("fade-in");
-        });
-
-        // التحقق من وجود عناصر مرئية عند تحميل الصفحة
-        window.addEventListener("scroll", function () {
-          elements.forEach(function (element) {
-            const rect = element.getBoundingClientRect();
-            if (rect.top <= window.innerHeight) {
-              element.classList.add("visible");
-            }
-          });
-        });
-
-        // التحقق من الحالة الأولية عند تحميل الصفحة
-        elements.forEach(function (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= window.innerHeight) {
-            element.classList.add("visible");
-          }
-        });
-      });
-
-      document.addEventListener("scroll", function () {
-        const button = document.getElementById("whatsappButton");
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        button.style.top = `${scrollTop + window.innerHeight / 2}px`;
-      });
-    </script>
-    <script src="js/script.js"></script>
+    <script src="js/proj.js"></script>
   </body>
 </html>

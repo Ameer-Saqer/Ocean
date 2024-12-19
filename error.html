@@ -27,7 +27,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg pt-5">
+      <nav class="navbar navbar-expand-lg">
         <div
           class="container-fluid d-flex align-items-center justify-content-between"
         >
@@ -50,13 +50,13 @@
             <div class="nav_back">
               <ul class="navbar-nav mb-lg-0 d-flex align-items-center">
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.html">Home</a>
+                  <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="about.html">Service</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="project.html">Projects</a>
+                  <a class="nav-link" href="proj.html">Projects</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="work.html">How it works</a>
@@ -182,6 +182,24 @@
         </p>
       </div>
     </footer>
+    <!-- End footer -->
+
+    <a
+      href="https://wa.me/970567463404"
+      target="_blank"
+      class="whatsapp-button"
+      id="whatsappButton"
+    >
+      <img src="image/whatsapp.png" alt="WhatsApp" />
+    </a>
+
+    <script>
+      document.addEventListener("scroll", function () {
+        const button = document.getElementById("whatsappButton");
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        button.style.top = `${scrollTop + window.innerHeight / 2}px`;
+      });
+    </script>
 
     <script src="js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>

@@ -1,5 +1,5 @@
 var typed = new Typed("#text", {
-  strings: ["OCEAN.", "CREATIVE.", "DESIGN.", "DEVELOP."],
+  strings: ["OCEAN.", "DEVELOP.", "DESIGN.", "CREATIVE."],
   typeSpeed: 100,
   backSpeed: 150,
   loop: true,
@@ -59,4 +59,22 @@ document.addEventListener("DOMContentLoaded", function () {
       element.classList.add("visible");
     }
   });
+});
+
+// تحديد عنصر الهيدر
+const header = document.querySelector('header');
+
+// إضافة مستمع للتمرير
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) { // إذا تم التمرير أكثر من 50 بكسل
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+document.addEventListener("scroll", function () {
+  const button = document.getElementById("whatsappButton");
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  button.style.top = `${scrollTop + window.innerHeight / 2}px`;
 });
