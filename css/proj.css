@@ -144,6 +144,88 @@ header.scrolled {
   padding: 5px 0;
   margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+  .navbar img {
+    width: 120px; /* أو حجم مناسب */
+    height: auto;
+  }
+}
+
+
+/* تصميم لشاشات الجوال */
+@media (max-width: 768px) {
+  header {
+    height: auto; /* لجعل الهيدر يتكيف مع المحتوى */
+  }
+
+  .navbar {
+    height: auto; /* إزالة الارتفاع الثابت */
+    padding: 10px 5%; /* تقليل الحواف */
+    flex-wrap: wrap; /* لجعل العناصر تتكدس */
+  }
+
+  .navbar-toggler {
+    margin-left: auto; /* محاذاة زر القائمة إلى اليمين */
+  }
+
+  .nav_back {
+    flex-direction: column; /* تغيير اتجاه العناصر إلى عمودي */
+    height: auto;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* ترتيب العناصر بشكل عمودي */
+    gap: 10px; /* إضافة مسافات بين العناصر */
+  }
+
+  .navbar-nav li {
+    width: 100%; /* ملء العرض */
+  }
+
+  .navbar-nav li a {
+    font-size: 16px; /* تقليل حجم النص */
+    text-align: left; /* محاذاة النص إلى اليسار */
+  }
+
+}
+
+@media (max-width: 768px) {
+  /* تعديل مكان الزر */
+  .connect {
+    position: absolute; /* لضبط موقعه داخل الهيدر */
+    top: 450px; /* المسافة من الأعلى */
+    right: 50px; /* المسافة من اليمين */
+    font-size: 14px; /* تقليل حجم الزر للشاشات الصغيرة */
+    padding: 8px 15px;
+    width: auto; /* إزالة العرض الثابت */
+  }
+
+  .navbar {
+    padding: 10px 5%; /* تقليل الحواف لتوفير مساحة */
+  }
+
+  /* للتأكد من أن الهيدر يتكيف */
+  header {
+    height: auto; /* لضبط ارتفاع الهيدر */
+  }
+
+  .nav_back {
+    margin-top: 60px; /* ترك مسافة تحت الزر */
+  }
+}
+
+header.scrolled .connect {
+  top: 10px; /* تعديل المسافة عند التمرير */
+  right: 15px;
+  background-color: var(--secondry-color);
+  color: var(--blue-ocean);
+  transition: all 0.3s ease;
+}
 /* End Nav */
 
 /* Start Section Portfolio */

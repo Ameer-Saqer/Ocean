@@ -145,6 +145,88 @@ header.scrolled {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .navbar img {
+    width: 120px; /* أو حجم مناسب */
+    height: auto;
+  }
+}
+
+
+/* تصميم لشاشات الجوال */
+@media (max-width: 768px) {
+  header {
+    height: auto; /* لجعل الهيدر يتكيف مع المحتوى */
+  }
+
+  .navbar {
+    height: auto; /* إزالة الارتفاع الثابت */
+    padding: 10px 5%; /* تقليل الحواف */
+    flex-wrap: wrap; /* لجعل العناصر تتكدس */
+  }
+
+  .navbar-toggler {
+    margin-left: auto; /* محاذاة زر القائمة إلى اليمين */
+  }
+
+  .nav_back {
+    flex-direction: column; /* تغيير اتجاه العناصر إلى عمودي */
+    height: auto;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* ترتيب العناصر بشكل عمودي */
+    gap: 10px; /* إضافة مسافات بين العناصر */
+  }
+
+  .navbar-nav li {
+    width: 100%; /* ملء العرض */
+  }
+
+  .navbar-nav li a {
+    font-size: 16px; /* تقليل حجم النص */
+    text-align: left; /* محاذاة النص إلى اليسار */
+  }
+
+}
+
+@media (max-width: 768px) {
+  /* تعديل مكان الزر */
+  .connect {
+    position: absolute; /* لضبط موقعه داخل الهيدر */
+    top: 400px; /* المسافة من الأعلى */
+    right: 20px; /* المسافة من اليمين */
+    font-size: 14px; /* تقليل حجم الزر للشاشات الصغيرة */
+    padding: 8px 15px;
+    width: auto; /* إزالة العرض الثابت */
+  }
+
+  .navbar {
+    padding: 10px 5%; /* تقليل الحواف لتوفير مساحة */
+  }
+
+  /* للتأكد من أن الهيدر يتكيف */
+  header {
+    height: auto; /* لضبط ارتفاع الهيدر */
+  }
+
+  .nav_back {
+    margin-top: 60px; /* ترك مسافة تحت الزر */
+  }
+}
+
+header.scrolled .connect {
+  top: 10px; /* تعديل المسافة عند التمرير */
+  right: 15px;
+  background-color: var(--secondry-color);
+  color: var(--blue-ocean);
+  transition: all 0.3s ease;
+}
+
 /* end navbar */
 
 /* start landing */
@@ -259,6 +341,56 @@ header.scrolled {
     gap: 10px;
   }
 }
+
+@media (max-width: 768px) {
+  .landing .container {
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+    text-align: center; /* توسيط النصوص */
+    padding-bottom: 20px; /* تقليل التباعد السفلي */
+  }
+
+  .landing .text {
+    margin-bottom: 20px; /* إضافة تباعد بين النص والصورة */
+  }
+
+  .landing .text h1 {
+    font-size: 40px; /* تصغير حجم العنوان */
+    line-height: 1.5; /* تحسين تباعد الأسطر */
+  }
+
+  .landing .text p {
+    font-size: 18px; /* تقليل حجم النص */
+    margin: 10px 0; /* تقليل التباعد */
+  }
+
+  .landing .image img {
+    width: 100%; /* جعل الصورة بعرض الشاشة */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    margin: 0 auto; /* توسيط الصورة */
+  }
+
+  .landing .stats {
+    flex-direction: column; /* ترتيب الإحصائيات عمودياً */
+    gap: 15px; /* إضافة تباعد بين الإحصائيات */
+    margin-top: 20px; /* زيادة التباعد العلوي */
+  }
+
+  .landing .stat .number {
+    font-size: 24px; /* تقليل حجم الرقم */
+  }
+
+  .landing .stat .label {
+    font-size: 14px; /* تقليل حجم النص */
+  }
+
+  .btn_all {
+    width: 50%; /* جعل الزر بعرض أكبر */
+    font-size: 16px; /* تصغير النص داخل الزر */
+    margin: 20px auto; /* توسيط الزر في الأسفل */
+  }
+}
+
+
 /* end landing */
 
 /* start main */
@@ -558,6 +690,7 @@ header.scrolled {
 /* عند التفاعل مع البطاقة: تحريك الأيقونة */
 .card:hover .icon-work {
   transform: scale(1.2); /* تكبير الأيقونة */
+  background-color: #00FCDB;
 }
 
 .text-work {
